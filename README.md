@@ -143,8 +143,12 @@ const formatEventDuration = (start, end) => {
 };
 ```
 
+### 00:53:15 - start creating project
+
+### 01:07:13 - component creating
+
 ### ~01:38:00 - import icon lib
 
 ### ~01:55:00 - re-exports
 
-### 01:57:46 - css[type]
+### 01:56:22 - css[type]
