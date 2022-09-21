@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 export const Card = styled.div`
   position: relative;
-  border: 2px dashed black;
-  padding: 8px;
+  border: ${props => `2px dashed ${props.theme.colors.black}`};
+  padding: ${props => `${props.theme.spacing(2)}`};
   border-radius: 4px;
 `;
 
@@ -26,7 +26,25 @@ export const Info = styled.p`
   line-height: 24px;
   font-weight: 400;
   letter-spacing: 0.25px;
+  svg {
+    display: block;
+    margin-right: 8px;
+    color: var(--color-secondary-text);
+  }
 `;
+
+const setBgColor = ({ eventType, theme }) => {
+  switch (eventType) {
+    case 'free':
+      return theme.colors.green;
+    case 'paid':
+      return theme.colors.blue;
+    case 'vip':
+      return theme.colors.red;
+    default:
+      return theme.colors.white;
+  }
+};
 
 export const Chip = styled.span`
   position: absolute;
@@ -35,12 +53,7 @@ export const Chip = styled.span`
   padding: 4px 8px;
   border-radius: 4px;
   text-transform: uppercase;
-  background-color: #000;
   color: #fff;
 
-  ${props => {
-    console.log(props.a);
-    console.log(props.b);
-    console.log(props.type);
-  }}
+  background-color: ${setBgColor};
 `;
